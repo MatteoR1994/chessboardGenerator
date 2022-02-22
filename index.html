@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    
+    <title>Document</title>
+</head>
+<body>
+    <!-- <input type="number" name="cells-number" hint="Quanto deve essere grande la scacchiera?"> -->
+    <a>Imposta la <strong>dimensione della scacchiera</strong> trascinando il range slider oppure digitandone la dimensione e premendo il tasto <strong>INVIO</strong></a>
+    <input id="rangeInput" type="range" name="chessboardSize" value="3" min="3" max="100" oninput="generateChessBoard(rangeInput.value);amount.value = rangeInput.value" />
+    <input id="amount" type="number" name="chessboardSizeInput" value="3" min="3" max="100" required/>
+    <div class="chessboard-container">
+        <div class="chessboard">
+
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+<script>generateChessBoard()</script>
+<script>
+    const input = document.getElementById("amount");
+    input.addEventListener("keyup", function(event) {
+    if (event.keyCode === 13) {
+        document.getElementById("rangeInput").value = input.value;
+        generateChessBoard(input.value);
+    }
+    });
+</script>
+</html>
