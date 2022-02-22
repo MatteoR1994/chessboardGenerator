@@ -3,7 +3,7 @@ let cells = [];
 function generateChessBoard(size = 3) {
     if (size <= 100 && size >= 3) {
         let dimension = 40;
-        let chessboard = document.getElementsByClassName('chessboard')[0]
+        let chessboard = document.getElementsByClassName('chessboard')[0];
         chessboard.innerHTML = '';
         for (let i = 0; i < size; i++) {
             let lineContainer = document.createElement('div');
@@ -41,7 +41,7 @@ function animate(time) {
 
     cells[index].style.backgroundColor = (column + row + board)  % 2 === 0 ? "black" : "white" ;
     
-    requestAnimationFrame(() => animate(time + 1))
+    requestAnimationFrame(() => animate(time + 1));
 }
 
 function animate2(time) {
@@ -51,5 +51,5 @@ function animate2(time) {
         }
     }
 
-    requestAnimationFrame(() => animate2(time + 1))
+    requestAnimationFrame(() => animate2(time + 1));
 }
